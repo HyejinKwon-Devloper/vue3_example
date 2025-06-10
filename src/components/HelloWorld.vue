@@ -5,6 +5,20 @@ defineProps<{
   msg: string
 }>()
 
+document.addEventListener("keypress", function(e) {
+  console.log(e)
+  if (e.keyCode === 13) {
+    alert('test');
+  }
+}, false);
+
+document.addEventListener("keyup", function(e) {
+  console.log(e)
+  if (e.key === "F11" ) {
+    alert('test2');
+  }
+}, false);
+
 </script>
 
 <template>
@@ -12,7 +26,7 @@ defineProps<{
     <h1 class="green">{{ msg }}</h1>
     <h3>
      {{ translateMsg("message.success_start") }}
-      <a href="https://vitejs.dev/" target="_blank" rel="noopener">Vite</a> +
+      <a href="https://vitejs.dev/">Vite</a> +
       <a href="https://vuejs.org/" target="_blank" rel="noopener">Vue 3</a>. 
       What's next?
     </h3>
